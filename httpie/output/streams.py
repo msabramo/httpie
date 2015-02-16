@@ -92,6 +92,8 @@ def build_output_stream(args, env, request, response):
         output.append(Stream(
             msg=HTTPResponse(response),
             with_time=resp_t,
+            with_headers=False,
+            with_body=False,
             elapsed_time=response.elapsed))
 
     if env.stdout_isatty and resp_b:
